@@ -9,11 +9,12 @@ import NewUser from "./pages/newUser/NewUser";
 import ProductList from "./pages/productList/ProductList";
 import Product from "./pages/product/Product";
 import NewProduct from "./pages/newProduct/NewProduct";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 function App() {
 
-  const MONTHS = [
+  const MONTHS = useMemo(()=>
+  [
     "Jan",
     "Feb",
     "Mar",
@@ -27,6 +28,7 @@ function App() {
     "Nov",
     "Dec",
   ]
+  )
 
   const [userStats,setUserStats] = useState([]); 
 
@@ -34,6 +36,7 @@ function App() {
     const getStats = async () =>{
 
     }
+    getStats();
   },[])
   return (
     <Router>
